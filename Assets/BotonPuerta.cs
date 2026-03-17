@@ -5,7 +5,7 @@ using TMPro;
 public class BotonPuerta : MonoBehaviour
 {
     [Header("Conexión")]
-    public ControlRejilla_TAREA2 rejillaAsociada;
+    public CRT_General rejillaAsociada;
     public TextMeshProUGUI textoBoton;
 
     [Header("Apariencia")]

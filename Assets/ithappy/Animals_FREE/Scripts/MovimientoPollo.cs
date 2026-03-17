@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
@@ -13,7 +11,7 @@ public class MovimientoPollo : MonoBehaviour
     public float tiempoDeEspera = 3f;
     public AudioSource altavozGallina;
 
-    private int indiceActual = 0;
+    [SerializeField] private int indiceActual = 0;
     private bool estaCaminando = false;
     private bool esperandoEnElMedio = false;
     private bool regresandoPorChoque = false;
@@ -55,9 +53,11 @@ public class MovimientoPollo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"OnTriggerEnter: {other.name}");
         // Detecta el choque con cualquier objeto que se llame REJILLA
         if (other.gameObject.name.ToUpper().Contains("REJILLA"))
         {
+            Debug.Log($"OnTriggerEnter Rejilla: {other.name}");
             DarLaVuelta();
         }
     }
@@ -66,7 +66,7 @@ public class MovimientoPollo : MonoBehaviour
     {
         regresandoPorChoque = true;
         // Calculamos el punto anterior de SU lista específica para que vuelva
-        indiceActual = (indiceActual - 2 + puntos.Count) % puntos.Count;
+        indiceActual = (indiceActual + 1) % puntos.Count;
         agent.SetDestination(puntos[indiceActual].position);
         Debug.Log(gameObject.name + " detectó rejilla y regresa a su punto anterior.");
     }
@@ -108,9 +108,11 @@ public class MovimientoPollo : MonoBehaviour
         if (puntos.Count == 0 || regresandoPorChoque) return;
 
         // Cambiamos 'destination' para asegurarnos de que use la posición fresca de los puntos
-        agent.SetDestination(puntos[indiceActual].position);
+        
 
         indiceActual = (indiceActual + 1) % puntos.Count;
+
+        agent.SetDestination(puntos[indiceActual].position);
     }
 
     void actualizarAnimacion()

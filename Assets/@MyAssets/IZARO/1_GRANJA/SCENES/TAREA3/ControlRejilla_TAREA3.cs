@@ -1,26 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class ControlRejilla_TAREA3 : MonoBehaviour
+public class ControlRejilla_TAREA3 : CRT_General
 {
-    private Vector3 posCerrada;
-    private Vector3 posAbierta;
-
-    [Header("Ajustes de Movimiento")]
-    public float distanciaSubida = 0.7f;
-    public float velocidad = 3f;
-    public bool abierta = false;
-
-    [Header("Temporizador Sorpresa")]
-    // 15s (campana) + 5s (margen) = 20s
-    // Cámbialo a 21 o 22 en el Inspector si quieres aún más tiempo
-    public float tiempoParaAbrir = 22f;
-
-    void Start()
+    public override void Start()
     {
-        posCerrada = transform.localPosition;
-        posAbierta = posCerrada + new Vector3(0, distanciaSubida, 0);
-
+        base.Start();
         // Forzamos posición CERRADA al empezar
         abierta = false;
         transform.localPosition = posCerrada;
@@ -39,24 +24,5 @@ public class ControlRejilla_TAREA3 : MonoBehaviour
         {
             Alternar();
         }
-    }
-
-    public void Alternar()
-    {
-        StopAllCoroutines();
-        abierta = !abierta;
-        Vector3 destino = abierta ? posAbierta : posCerrada;
-        StartCoroutine(MoverRejilla(destino));
-    }
-
-    IEnumerator MoverRejilla(Vector3 destino)
-    {
-        // Usamos un margen pequeño para el destino
-        while (Vector3.Distance(transform.localPosition, destino) > 0.001f)
-        {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, destino, Time.deltaTime * velocidad);
-            yield return null;
-        }
-        transform.localPosition = destino;
     }
 }

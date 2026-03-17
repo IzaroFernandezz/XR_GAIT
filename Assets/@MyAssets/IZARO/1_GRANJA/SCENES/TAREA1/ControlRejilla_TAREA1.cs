@@ -1,14 +1,10 @@
 using UnityEngine;
 
-public class ControlRejilla_TAREA1 : MonoBehaviour
+public class ControlRejilla_TAREA1 : CRT_General
 {
-    private Vector3 posCerrada;
-
-    void Start()
+    public override void Start()
     {
-        // Guarda la posición actual como cerrada
-        posCerrada = transform.localPosition;
-
+        base.Start();
         // Asegura que siempre esté cerrada
         transform.localPosition = posCerrada;
     }

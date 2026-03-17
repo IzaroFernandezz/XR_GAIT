@@ -1,32 +1,3 @@
-//using UnityEngine;
-//using UnityEngine.SceneManagement;
-
-//public class GestionMenu : MonoBehaviour
-//{
-//    public GameObject Panel_Inicio;
-//    public GameObject Panel_Instrucciones;
-
-//    void Start()
-//    {
-//        // Aseguramos el estado inicial al arrancar
-//        Panel_Inicio.SetActive(true);
-//        Panel_Instrucciones.SetActive(false);
-//    }
-
-//    public void MostrarInstrucciones()
-//    {
-//        Panel_Inicio.SetActive(false);
-//        Panel_Instrucciones.SetActive(true);
-//    }
-
-//    public void CargarPatio()
-//    {
-//        SceneManager.LoadScene("SCENARIO1_YARD_PRUEBAS");
-//    }
-//}
-
-
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,8 +6,9 @@ public class GestionMenu : MonoBehaviour
     public GameObject panelMenu;
     public GameObject panelInstrucciones1;
     public GameObject panelInstrucciones2;
+    public GameObject panelInstrucciones3;
 
-    // BOTONES DEL MENU
+    // BOTONES DEL MENU (Para abrir los paneles)
     public void IrInstrucciones1()
     {
         panelMenu.SetActive(false);
@@ -49,16 +21,25 @@ public class GestionMenu : MonoBehaviour
         panelInstrucciones2.SetActive(true);
     }
 
-    // BOTONES DE INSTRUCCIONES
-    public void CargarPasillo()
+    public void IrInstrucciones3()
     {
-        SceneManager.LoadScene("SCENARIO1_PASILLO");
+        panelMenu.SetActive(false);
+        panelInstrucciones3.SetActive(true);
     }
 
-    public void CargarYardPruebas()
+    // BOTONES DE INSTRUCCIONES (Para cargar las escenas)
+    public void CargarTarea1()
     {
-        SceneManager.LoadScene("SCENARIO1_YARD_PRUEBAS");
+        SceneManager.LoadScene("SCENARIO1_TAREA1");
+    }
+
+    public void CargarTarea2()
+    {
+        SceneManager.LoadScene("SCENARIO1_TAREA2");
+    }
+
+    public void CargarTarea3()
+    {
+        SceneManager.LoadScene("SCENARIO1_TAREA3");
     }
 }
-
-

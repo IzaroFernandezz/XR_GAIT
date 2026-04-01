@@ -6,59 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 55daccc09a3b69647bbab145b54a3ab3
-  - enabled: 0
-    path: Assets/VR_CUBO_ESCENA.unity
-    guid: 0dc8f73c3cd131c4f8980d2a1932d55d
-  - enabled: 0
-    path: Assets/cubito.unity
-    guid: e50da39396e5c794fbdaf1d1da605871
-  - enabled: 0
-    path: Assets/CUBO_PRUEBA_SIN_PLANO.unity
-    guid: feb79e2a4151c42408e585b1a01b52cb
-  - enabled: 0
-    path: Assets/CUBO_PRUEBAS.unity
-    guid: 782da5f1d7364414c87036d006885a2a
-  - enabled: 0
-    path: Assets/Scenario1_Corridor.unity
-    guid: b26128a343d12a943a64274f0ca13e02
-  - enabled: 0
-    path: Assets/Scenario1_IdaYVuelta.unity
-    guid: 70aa7f3f15ff16c4381955df9fb80456
-  - enabled: 0
-    path: Assets/Scenario1_IdaYVuelta_Semaforo.unity
-    guid: a29379bb3ae128247a705116244a07bf
-  - enabled: 0
-    path: Assets/Scenario1_IdaParadaVuelta_Semaforo.unity
-    guid: 91658208c77c7274d8939e1ed3da786a
-  - enabled: 0
-    path: Assets/Scenario1_IdaParadaVuelta_Semaforo 1 AUDIO.unity
-    guid: 9de02a6e50d80ac49a01cfdf895ab162
-  - enabled: 1
     path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/CANVAS.unity
     guid: f37a3efb540e97e448e950221d486fb6
-  - enabled: 0
-    path: Assets/@MyAssets/IZARO/SCENES/PANELES.unity
-    guid: 40ce55b7a7eec7c489ed3b6b6432cf4e
-  - enabled: 0
-    path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/SCENARIO1_YARD.unity
-    guid: 7dbed6fd12fc09749a24e186b97ff249
   - enabled: 0
     path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/SCENARIO1_PASILLO.unity
     guid: 77e683e470a9e01409b53836ca637b8d
   - enabled: 0
-    path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/SCENARIO1_YARD_PRUEBAS.unity
-    guid: bacd4147ff0df7049bb5ebc59cb80120
-  - enabled: 1
     path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/TAREA1/SCENARIO1_TAREA1.unity
     guid: 51a000209ccc64a4d8e6f9b8344d417f
-  - enabled: 1
+  - enabled: 0
     path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/TAREA2/SCENARIO1_TAREA2.unity
     guid: 0cd6daeb1d2dcc642ae7d451bb5d1fc1
-  - enabled: 1
-    path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/TAREA3/SCENARIO1_TAREA3.unity
+  - enabled: 0
+    path: Assets/@MyAssets/IZARO/1_GRANJA/SCENES/TAREA3b/SCENARIO1_TAREA3.unity
     guid: 67fa4a183a5ef8f4a847324d04274367
+  - enabled: 1
+    path: Assets/@MyAssets/IZARO/2_PLAZA/SCENARIO2.unity
+    guid: 892fc68c45f275541b2a2bb11a8d5211
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c6e58ca8a3420cf439c531624231b64b, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

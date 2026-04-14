@@ -34,6 +34,7 @@ public class GestionMenu : MonoBehaviour
         panelInstrucciones3b.SetActive(true);
     }
 
+
     // BOTONES DE INSTRUCCIONES (Para cargar las escenas)
     public void CargarTarea1()
     {
@@ -59,4 +60,11 @@ public class GestionMenu : MonoBehaviour
     {
         SceneManager.LoadScene(escenario);
     }
+
+    public void CargarSCENARIO2()
+    {
+        SceneManager.LoadScene("SCENARIO2");
+    }
+
+
 }

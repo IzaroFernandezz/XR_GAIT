@@ -36,7 +36,10 @@ public class ControlTelefono : MonoBehaviour
     void ActivarLlamada()
     {
         estaSonando = true;
-        if (altavoz != null) altavoz.Play();
+        if (altavoz != null)
+        {
+            altavoz.Play();
+        }
         Debug.Log("TELÉFONO: Sonando y vibrando. Esperando respuesta del paciente.");
     }
 
@@ -45,7 +48,10 @@ public class ControlTelefono : MonoBehaviour
         estaSonando = false;
 
         // Detener sonido y vibración inmediatamente
-        if (altavoz != null) altavoz.Stop();
+        if (altavoz != null)
+        {
+            altavoz.Stop();
+        }
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
 
         Debug.Log("TELÉFONO: Tarea completada con éxito.");

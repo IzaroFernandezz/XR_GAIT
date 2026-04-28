@@ -8226,7 +8226,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_MinRegionArea: 1
   m_NavMeshData: {fileID: 23800000, guid: 20f82361594d0614884b421fd77d621f, type: 2}
   m_BuildHeightMesh: 0
@@ -18720,7 +18720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1636976533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19335,10 +19335,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c2c58e74091a34e9d6c86a657d6d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelMenu: {fileID: 529699386}
-  panelInstrucciones1: {fileID: 0}
-  panelInstrucciones2: {fileID: 0}
-  panelInstrucciones3: {fileID: 0}
+  panelInicial: {fileID: 0}
+  panelGranjaPrincipal: {fileID: 0}
+  panelGranjaTarea1: {fileID: 0}
+  panelGranjaTarea2: {fileID: 0}
+  panelGranjaTarea3a: {fileID: 0}
+  panelGranjaTarea3b: {fileID: 0}
+  panelParquePrincipal: {fileID: 0}
+  panelParqueTarea1: {fileID: 0}
+  panelParqueTarea2: {fileID: 0}
+  panelParqueTarea3: {fileID: 0}
 --- !u!65 &1714563144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20490,7 +20496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1869856851
 MonoBehaviour:
   m_ObjectHideFlags: 0

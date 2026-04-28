@@ -4635,11 +4635,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c2c58e74091a34e9d6c86a657d6d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelMenu: {fileID: 1200868759}
-  panelInstrucciones1: {fileID: 0}
-  panelInstrucciones2: {fileID: 0}
-  panelInstrucciones3a: {fileID: 0}
-  panelInstrucciones3b: {fileID: 0}
+  panelInicial: {fileID: 0}
+  panelGranjaPrincipal: {fileID: 0}
+  panelGranjaTarea1: {fileID: 0}
+  panelGranjaTarea2: {fileID: 0}
+  panelGranjaTarea3a: {fileID: 0}
+  panelGranjaTarea3b: {fileID: 0}
+  panelParquePrincipal: {fileID: 0}
+  panelParqueTarea1: {fileID: 0}
+  panelParqueTarea2: {fileID: 0}
+  panelParqueTarea3: {fileID: 0}
 --- !u!65 &552096929
 BoxCollider:
   m_ObjectHideFlags: 0

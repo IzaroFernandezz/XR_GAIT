@@ -7,13 +7,16 @@ public class BotonesParque : MonoBehaviour
     [Header("Materiales")]
     public Material materialRojo;
     public Material materialVerde;
-
-    private Image miRenderer;
+    [SerializeField]
+    private Renderer miRenderer;
     private bool estado = false; // false = rojo, true = verde
 
     void Start()
     {
-        miRenderer = GetComponent<Image>();
+        if (miRenderer == null)
+        {
+            miRenderer = GetComponent<Renderer>();
+        }
         ActualizarColor();
     }
 
@@ -27,7 +30,7 @@ public class BotonesParque : MonoBehaviour
     {
         if (miRenderer != null)
         {
-            miRenderer.color = estado ? materialVerde.color : materialRojo.color;
+            miRenderer.material = estado ? materialVerde : materialRojo;
         }
     }
 }

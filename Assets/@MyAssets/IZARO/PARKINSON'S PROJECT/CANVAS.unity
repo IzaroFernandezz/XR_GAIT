@@ -1315,8 +1315,8 @@ MonoBehaviour:
   panelGranjaPrincipal: {fileID: 704441272}
   panelGranjaTarea1: {fileID: 1988034693}
   panelGranjaTarea2: {fileID: 1017685487}
-  panelGranjaTarea3a: {fileID: 870506518}
-  panelGranjaTarea3b: {fileID: 1728574731}
+  panelGranjaTarea3: {fileID: 870506518}
+  panelGranjaTarea4: {fileID: 1728574731}
   panelParquePrincipal: {fileID: 1888678132}
   panelParqueTarea1: {fileID: 445035291}
   panelParqueTarea2: {fileID: 253337955}
@@ -4758,7 +4758,7 @@ GameObject:
   - component: {fileID: 870506521}
   - component: {fileID: 870506520}
   m_Layer: 5
-  m_Name: GRANJA_TAREA3A
+  m_Name: GRANJA_TAREA3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7717,7 +7717,7 @@ GameObject:
   - component: {fileID: 1728574734}
   - component: {fileID: 1728574733}
   m_Layer: 5
-  m_Name: GRANJA_TAREA3B
+  m_Name: GRANJA_TAREA4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

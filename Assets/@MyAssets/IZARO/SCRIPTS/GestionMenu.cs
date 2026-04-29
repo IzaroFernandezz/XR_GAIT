@@ -10,8 +10,8 @@ public class GestionMenu : MonoBehaviour
     public GameObject panelGranjaPrincipal;
     public GameObject panelGranjaTarea1;
     public GameObject panelGranjaTarea2;
-    public GameObject panelGranjaTarea3a;
-    public GameObject panelGranjaTarea3b;
+    public GameObject panelGranjaTarea3;
+    public GameObject panelGranjaTarea4;
 
     // PARQUE
     public GameObject panelParquePrincipal;
@@ -54,13 +54,13 @@ public class GestionMenu : MonoBehaviour
     public void IrGranjaTarea3a()
     {
         panelGranjaPrincipal.SetActive(false);
-        panelGranjaTarea3a.SetActive(true);
+        panelGranjaTarea3.SetActive(true);
     }
 
     public void IrGranjaTarea3b()
     {
         panelGranjaPrincipal.SetActive(false);
-        panelGranjaTarea3b.SetActive(true);
+        panelGranjaTarea4.SetActive(true);
     }
 
     // =========================
@@ -113,15 +113,15 @@ public class GestionMenu : MonoBehaviour
         panelGranjaPrincipal.SetActive(true);
     }
 
-    public void VolverAGranjaPrincipalDesdeTarea3a()
+    public void VolverAGranjaPrincipalDesdeTarea3()
     {
-        panelGranjaTarea3a.SetActive(false);
+        panelGranjaTarea3.SetActive(false);
         panelGranjaPrincipal.SetActive(true);
     }
 
-    public void VolverAGranjaPrincipalDesdeTarea3b()
+    public void VolverAGranjaPrincipalDesdeTarea4()
     {
-        panelGranjaTarea3b.SetActive(false);
+        panelGranjaTarea4.SetActive(false);
         panelGranjaPrincipal.SetActive(true);
     }
 
@@ -157,14 +157,14 @@ public class GestionMenu : MonoBehaviour
         SceneManager.LoadScene("SCENARIO1_TAREA2");
     }
 
-    public void CargarGranjaTarea3a()
+    public void CargarGranjaTarea3()
     {
-        SceneManager.LoadScene("SCENARIO1_TAREA3a");
+        SceneManager.LoadScene("SCENARIO1_TAREA3");
     }
 
-    public void CargarGranjaTarea3b()
+    public void CargarGranjaTarea4()
     {
-        SceneManager.LoadScene("SCENARIO1_TAREA3b");
+        SceneManager.LoadScene("SCENARIO1_TAREA4");
     }
 
     // =========================

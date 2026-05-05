@@ -25,10 +25,10 @@ EditorBuildSettings:
     guid: 892fc68c45f275541b2a2bb11a8d5211
   - enabled: 1
     path: Assets/@MyAssets/IZARO/PARKINSON'S PROJECT/2_PLAZA/SCENES/TAREA 2/SCENARIO2_TAREA2.unity
-    guid: aca64542d4654b642a1f75d7da6a9984
+    guid: 17ce8850d59ab2f48af21cbe659fea5a
   - enabled: 1
-    path: Assets/@MyAssets/IZARO/PARKINSON'S PROJECT/2_PLAZA/SCENES/TAREA 3/SCENARIO2_TAREA3_prueba.unity
-    guid: a7a8e8582e3e47b4eaaa172a0c2b9d6b
+    path: Assets/@MyAssets/IZARO/PARKINSON'S PROJECT/2_PLAZA/SCENES/TAREA 3/SCENARIO2_TAREA3.unity
+    guid: 7e2a2337b72e2214b9bc6a5de22ee9ee
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c6e58ca8a3420cf439c531624231b64b, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

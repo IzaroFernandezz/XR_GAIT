@@ -11,6 +11,7 @@ public class BotonesParque : MonoBehaviour
     private Renderer miRenderer;
     private bool estado = false; // false = rojo, true = verde
 
+
     void Start()
     {
         if (miRenderer == null)
@@ -18,6 +19,14 @@ public class BotonesParque : MonoBehaviour
             miRenderer = GetComponent<Renderer>();
         }
         ActualizarColor();
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            AlPulsar();
+        }
     }
 
     public void AlPulsar()

@@ -14,7 +14,7 @@ public class CRT_General : MonoBehaviour
     [Header("Temporizador Sorpresa")]
     // 15s (campana) + 5s (margen) = 20s
     // Cámbialo a 21 o 22 en el Inspector si quieres aún más tiempo
-    protected float tiempoParaAbrir = 22f;
+    [SerializeField] protected float tiempoParaAbrir = 22f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public virtual void Start()

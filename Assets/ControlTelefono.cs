@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using UnityEngine;
 
 public class ControlTelefono : MonoBehaviour
@@ -6,16 +7,32 @@ public class ControlTelefono : MonoBehaviour
     public AudioSource altavoz;
     public AudioClip sonidoLlamada;
     public AudioClip audioInstrucciones;
+    public AudioClip audioInstrucciones2;
 
     [Header("Configuracion de la Tarea")]
     public Transform cabeza;
     public float distanciaUmbral = 0.25f;
+    public GrabInteractable telefonoInteractuable;
 
     private bool estaSonando = false;
 
     void Start()
     {
         Invoke("ActivarLlamada", 15f);
+
+        if (telefonoInteractuable != null)
+        {
+            telefonoInteractuable.WhenStateChanged += BolsaAgarrada;
+        }
+
+    }
+
+    void BolsaAgarrada(InteractableStateChangeArgs args)
+    {
+        if (args.NewState == InteractableState.Select)
+        {
+            ContestarTelefono2();
+        }
     }
 
     void Update()
@@ -66,9 +83,31 @@ public class ControlTelefono : MonoBehaviour
         }
 
         Debug.Log("TELÉFONO: Contestado. Reproduciendo instrucciones.");
-
-        Invoke("ActivarLlamada", Random.Range(20f, 40f));
     }
+
+
+    void ContestarTelefono2()
+    {
+        estaSonando = false;
+
+        OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+
+        if (altavoz != null)
+        {
+            altavoz.Stop();
+
+            if (audioInstrucciones != null)
+            {
+                altavoz.clip = audioInstrucciones2;
+                altavoz.loop = false;
+                altavoz.Play();
+            }
+        }
+
+        Debug.Log("TELÉFONO: Contestado. Reproduciendo instrucciones.");
+    }
+
+
 
     void OnDisable()
     {

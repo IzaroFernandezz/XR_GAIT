@@ -656,10 +656,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b56c3e92ef6b794e9183c55ce762bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posCerrada: {x: 0, y: 0, z: 0}
+  posAbierta: {x: 0, y: 0, z: 0}
   distanciaSubida: 0.7
   velocidad: 3
   abierta: 0
-  tiempoParaAbrir: 22
+  tiempoParaAbrir: 15
 --- !u!114 &5351582912129510080 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8188235194512888905, guid: 7ce226f7331218241ad77ba965508612, type: 3}

@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 116672144}
   - component: {fileID: 116672143}
   m_Layer: 5
-  m_Name: Button3a
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 316604226}
         m_TargetAssemblyTypeName: GestionMenu, Assembly-CSharp
-        m_MethodName: CargarGranjaTarea3a
+        m_MethodName: CargarGranjaTarea3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2057,7 +2057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &433207185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TAREA 3b
+  m_text: 'TAREA 4
 
 '
   m_isRightToLeft: 0
@@ -4929,7 +4929,7 @@ GameObject:
   - component: {fileID: 922681778}
   - component: {fileID: 922681777}
   m_Layer: 5
-  m_Name: Button3a
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6918,7 +6918,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 316604226}
         m_TargetAssemblyTypeName: GestionMenu, Assembly-CSharp
-        m_MethodName: CargarGranjaTarea3b
+        m_MethodName: CargarGranjaTarea4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7313,7 +7313,7 @@ GameObject:
   - component: {fileID: 1557653236}
   - component: {fileID: 1557653235}
   m_Layer: 5
-  m_Name: Button3b
+  m_Name: Button4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7490,7 +7490,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAREA 3a
+  m_text: 'TAREA 3
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3017c166095690f488ebfe9a412c6275, type: 2}
   m_sharedMaterial: {fileID: -4636674957646534027, guid: 3017c166095690f488ebfe9a412c6275, type: 2}
@@ -7975,7 +7977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAREA 3a
+  m_text: TAREA 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3017c166095690f488ebfe9a412c6275, type: 2}
   m_sharedMaterial: {fileID: -4636674957646534027, guid: 3017c166095690f488ebfe9a412c6275, type: 2}

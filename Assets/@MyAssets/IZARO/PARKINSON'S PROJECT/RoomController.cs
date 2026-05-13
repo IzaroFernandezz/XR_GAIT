@@ -1,5 +1,6 @@
 using UnityEngine;
 using Meta.XR.MRUtilityKit;
+using System;
 
 public class RoomController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class RoomController : MonoBehaviour
     public float yOffset = 0.02f;
 
     [SerializeField] private GameObject spawnedRoom;
+
+    public event Action OnRoomPlaced;
 
     private void Start()
     {
@@ -46,6 +49,8 @@ public class RoomController : MonoBehaviour
             spawnedRoom.transform.position = floorCenter;
             //spawnedRoom.transform.rotation = floorAnchor.transform.rotation;
         }
+
+        OnRoomPlaced?.Invoke();
 
         Debug.Log("Room colocado en el centro del suelo.");
     }

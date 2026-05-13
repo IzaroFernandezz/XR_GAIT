@@ -5944,8 +5944,8 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _data: {fileID: 0}
-  _pointableElement: {fileID: 0}
-  _rigidbody: {fileID: 0}
+  _pointableElement: {fileID: 1133907938}
+  _rigidbody: {fileID: 1133907937}
   _grabSource: {fileID: 0}
   _useClosestPointAsGrabSource: 0
   _releaseDistance: 0
@@ -7545,8 +7545,10 @@ MonoBehaviour:
   altavoz: {fileID: 1435592724}
   sonidoLlamada: {fileID: 0}
   audioInstrucciones: {fileID: 0}
+  audioInstrucciones2: {fileID: 0}
   cabeza: {fileID: 0}
   distanciaUmbral: 0.25
+  telefonoInteractuable: {fileID: 0}
 --- !u!82 &1435592724
 AudioSource:
   m_ObjectHideFlags: 0

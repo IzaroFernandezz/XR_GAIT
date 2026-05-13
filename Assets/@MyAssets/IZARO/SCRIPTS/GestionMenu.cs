@@ -3,149 +3,102 @@ using UnityEngine.SceneManagement;
 
 public class GestionMenu : MonoBehaviour
 {
-    // PANEL INICIAL
+    [Header("PANEL INICIAL")]
     public GameObject panelInicial;
 
-    // GRANJA
+    [Header("GRANJA")]
     public GameObject panelGranjaPrincipal;
     public GameObject panelGranjaTarea1;
     public GameObject panelGranjaTarea2;
     public GameObject panelGranjaTarea3;
     public GameObject panelGranjaTarea4;
 
-    // PARQUE
+    [Header("PARQUE")]
     public GameObject panelParquePrincipal;
     public GameObject panelParqueTarea1;
     public GameObject panelParqueTarea2;
     public GameObject panelParqueTarea3;
 
-    // =========================
-    // BOTONES PANEL INICIAL
-    // =========================
+    void Start()
+    {
+        IrInicio();
+    }
+
+    void OcultarTodo()
+    {
+        panelInicial.SetActive(false);
+
+        panelGranjaPrincipal.SetActive(false);
+        panelGranjaTarea1.SetActive(false);
+        panelGranjaTarea2.SetActive(false);
+        panelGranjaTarea3.SetActive(false);
+        panelGranjaTarea4.SetActive(false);
+
+        panelParquePrincipal.SetActive(false);
+        panelParqueTarea1.SetActive(false);
+        panelParqueTarea2.SetActive(false);
+        panelParqueTarea3.SetActive(false);
+    }
+
+    public void IrInicio()
+    {
+        OcultarTodo();
+        panelInicial.SetActive(true);
+    }
 
     public void IrGranjaPrincipal()
     {
-        panelInicial.SetActive(false);
+        OcultarTodo();
         panelGranjaPrincipal.SetActive(true);
     }
 
     public void IrParquePrincipal()
     {
-        panelInicial.SetActive(false);
+        OcultarTodo();
         panelParquePrincipal.SetActive(true);
     }
 
-    // =========================
-    // BOTONES GRANJA PRINCIPAL
-    // =========================
-
     public void IrGranjaTarea1()
     {
-        panelGranjaPrincipal.SetActive(false);
+        OcultarTodo();
         panelGranjaTarea1.SetActive(true);
     }
 
     public void IrGranjaTarea2()
     {
-        panelGranjaPrincipal.SetActive(false);
+        OcultarTodo();
         panelGranjaTarea2.SetActive(true);
     }
 
-    public void IrGranjaTarea3a()
+    public void IrGranjaTarea3()
     {
-        panelGranjaPrincipal.SetActive(false);
+        OcultarTodo();
         panelGranjaTarea3.SetActive(true);
     }
 
-    public void IrGranjaTarea3b()
+    public void IrGranjaTarea4()
     {
-        panelGranjaPrincipal.SetActive(false);
+        OcultarTodo();
         panelGranjaTarea4.SetActive(true);
     }
 
-    // =========================
-    // BOTONES PARQUE PRINCIPAL
-    // =========================
-
     public void IrParqueTarea1()
     {
-        panelParquePrincipal.SetActive(false);
+        OcultarTodo();
         panelParqueTarea1.SetActive(true);
     }
 
     public void IrParqueTarea2()
     {
-        panelParquePrincipal.SetActive(false);
+        OcultarTodo();
         panelParqueTarea2.SetActive(true);
     }
 
     public void IrParqueTarea3()
     {
-        panelParquePrincipal.SetActive(false);
+        OcultarTodo();
         panelParqueTarea3.SetActive(true);
     }
-
-    // =========================
-    // BOTONES VOLVER
-    // =========================
-
-    public void VolverAlInicioDesdeGranja()
-    {
-        panelGranjaPrincipal.SetActive(false);
-        panelInicial.SetActive(true);
-    }
-
-    public void VolverAlInicioDesdeParque()
-    {
-        panelParquePrincipal.SetActive(false);
-        panelInicial.SetActive(true);
-    }
-
-    public void VolverAGranjaPrincipalDesdeTarea1()
-    {
-        panelGranjaTarea1.SetActive(false);
-        panelGranjaPrincipal.SetActive(true);
-    }
-
-    public void VolverAGranjaPrincipalDesdeTarea2()
-    {
-        panelGranjaTarea2.SetActive(false);
-        panelGranjaPrincipal.SetActive(true);
-    }
-
-    public void VolverAGranjaPrincipalDesdeTarea3()
-    {
-        panelGranjaTarea3.SetActive(false);
-        panelGranjaPrincipal.SetActive(true);
-    }
-
-    public void VolverAGranjaPrincipalDesdeTarea4()
-    {
-        panelGranjaTarea4.SetActive(false);
-        panelGranjaPrincipal.SetActive(true);
-    }
-
-    public void VolverAParquePrincipalDesdeTarea1()
-    {
-        panelParqueTarea1.SetActive(false);
-        panelParquePrincipal.SetActive(true);
-    }
-
-    public void VolverAParquePrincipalDesdeTarea2()
-    {
-        panelParqueTarea2.SetActive(false);
-        panelParquePrincipal.SetActive(true);
-    }
-
-    public void VolverAParquePrincipalDesdeTarea3()
-    {
-        panelParqueTarea3.SetActive(false);
-        panelParquePrincipal.SetActive(true);
-    }
-
-    // =========================
-    // BOTONES EMPEZAR GRANJA
-    // =========================
 
     public void CargarGranjaTarea1()
     {
@@ -167,10 +120,6 @@ public class GestionMenu : MonoBehaviour
         SceneManager.LoadScene("SCENARIO1_TAREA4");
     }
 
-    // =========================
-    // BOTONES EMPEZAR PARQUE
-    // =========================
-
     public void CargarParqueTarea1()
     {
         SceneManager.LoadScene("SCENARIO2_TAREA1");
@@ -185,10 +134,6 @@ public class GestionMenu : MonoBehaviour
     {
         SceneManager.LoadScene("SCENARIO2_TAREA3");
     }
-
-    // =========================
-    // GENERICO
-    // =========================
 
     public void CargarEscenario(string escenario)
     {

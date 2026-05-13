@@ -3081,6 +3081,7 @@ MonoBehaviour:
   - {fileID: 201648697}
   tiempoDeEspera: 3
   altavozGallina: {fileID: 0}
+  roomController: {fileID: 921945820}
   indiceActual: 0
 --- !u!1 &921945818
 GameObject:
@@ -3459,7 +3460,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.083333336
   m_MinRegionArea: 1
-  m_NavMeshData: {fileID: 23800000, guid: 20f82361594d0614884b421fd77d621f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 96c51611308e337439545057eeee9602, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &949138687
 GameObject:
@@ -4049,6 +4050,7 @@ MonoBehaviour:
   - {fileID: 537889472}
   tiempoDeEspera: 3
   altavozGallina: {fileID: 0}
+  roomController: {fileID: 921945820}
   indiceActual: 0
 --- !u!1 &1007158300
 GameObject:
@@ -12645,6 +12647,7 @@ MonoBehaviour:
   - {fileID: 1546458179}
   tiempoDeEspera: 3
   altavozGallina: {fileID: 0}
+  roomController: {fileID: 921945820}
   indiceActual: 0
 --- !u!82 &1889276253
 AudioSource:

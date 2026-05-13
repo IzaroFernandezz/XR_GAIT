@@ -10,6 +10,7 @@ public class MovimientoPollo : MonoBehaviour
     public List<Transform> puntos = new List<Transform>();
     public float tiempoDeEspera = 3f;
     public AudioSource altavozGallina;
+    public RoomController roomController;
 
     [SerializeField] private int indiceActual = 0;
     private bool estaCaminando = false;
@@ -22,7 +23,20 @@ public class MovimientoPollo : MonoBehaviour
         if (anim == null) anim = GetComponent<Animator>();
         if (altavozGallina == null) altavozGallina = GetComponent<AudioSource>();
 
-        IrAlSiguientePunto();
+        if(roomController != null)
+        {
+            roomController.OnRoomPlaced -= () =>
+            {
+                Debug.Log("Room colocado, iniciando movimiento del pollo.");
+                IrAlSiguientePunto();
+            };
+            roomController.OnRoomPlaced += () =>
+            {
+                Debug.Log("Room colocado, iniciando movimiento del pollo.");
+                IrAlSiguientePunto();
+            };
+        }
+        //IrAlSiguientePunto();
     }
 
     void Update()

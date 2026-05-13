@@ -15,6 +15,8 @@ public class ControlTelefono : MonoBehaviour
     public GrabInteractable telefonoInteractuable;
 
     private bool estaSonando = false;
+    private int numeroLlamada = 1;
+    private bool segundaLlamadaActivada = false;
 
     void Start()
     {
@@ -24,14 +26,14 @@ public class ControlTelefono : MonoBehaviour
         {
             telefonoInteractuable.WhenStateChanged += BolsaAgarrada;
         }
-
     }
 
     void BolsaAgarrada(InteractableStateChangeArgs args)
     {
-        if (args.NewState == InteractableState.Select)
+        if (args.NewState == InteractableState.Select && !segundaLlamadaActivada)
         {
-            ContestarTelefono2();
+            segundaLlamadaActivada = true;
+            ActivarLlamada2();
         }
     }
 
@@ -45,13 +47,21 @@ public class ControlTelefono : MonoBehaviour
 
             if (distanciaActual < distanciaUmbral)
             {
-                ContestarTelefono();
+                if (numeroLlamada == 1)
+                {
+                    ContestarTelefono();
+                }
+                else if (numeroLlamada == 2)
+                {
+                    ContestarTelefono2();
+                }
             }
         }
     }
 
     void ActivarLlamada()
     {
+        numeroLlamada = 1;
         estaSonando = true;
 
         if (altavoz != null && sonidoLlamada != null)
@@ -61,7 +71,23 @@ public class ControlTelefono : MonoBehaviour
             altavoz.Play();
         }
 
-        Debug.Log("TELÉFONO: Sonando y vibrando.");
+        Debug.Log("TELÉFONO: Primera llamada sonando y vibrando.");
+    }
+
+    void ActivarLlamada2()
+    {
+        numeroLlamada = 2;
+        estaSonando = true;
+
+        if (altavoz != null && sonidoLlamada != null)
+        {
+            altavoz.Stop();
+            altavoz.clip = sonidoLlamada;
+            altavoz.loop = true;
+            altavoz.Play();
+        }
+
+        Debug.Log("TELÉFONO: Segunda llamada sonando y vibrando.");
     }
 
     void ContestarTelefono()
@@ -82,9 +108,8 @@ public class ControlTelefono : MonoBehaviour
             }
         }
 
-        Debug.Log("TELÉFONO: Contestado. Reproduciendo instrucciones.");
+        Debug.Log("TELÉFONO: Primera llamada contestada.");
     }
-
 
     void ContestarTelefono2()
     {
@@ -96,7 +121,7 @@ public class ControlTelefono : MonoBehaviour
         {
             altavoz.Stop();
 
-            if (audioInstrucciones != null)
+            if (audioInstrucciones2 != null)
             {
                 altavoz.clip = audioInstrucciones2;
                 altavoz.loop = false;
@@ -104,13 +129,16 @@ public class ControlTelefono : MonoBehaviour
             }
         }
 
-        Debug.Log("TELÉFONO: Contestado. Reproduciendo instrucciones.");
+        Debug.Log("TELÉFONO: Segunda llamada contestada.");
     }
-
-
 
     void OnDisable()
     {
+        if (telefonoInteractuable != null)
+        {
+            telefonoInteractuable.WhenStateChanged -= BolsaAgarrada;
+        }
+
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
     }
 }

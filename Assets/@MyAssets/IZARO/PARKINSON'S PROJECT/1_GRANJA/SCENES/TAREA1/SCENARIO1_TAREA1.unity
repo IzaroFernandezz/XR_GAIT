@@ -5303,7 +5303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   altavozCampana: {fileID: 1091911824}
   animadorCampana: {fileID: 2010971770}
-  tiempoEsperaAlCargar: 15
+  tiempoEsperaAlCargar: 5
   intervaloEntreToques: 2.1
 --- !u!1 &1096487887
 GameObject:

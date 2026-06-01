@@ -13,7 +13,7 @@ public class ControladorColliders : MonoBehaviour
         {
             OnColliderEntered?.Invoke();
         }
-        MetricsLogger.Instance.LogEvent("ENTER", other.name, "RING", transform.position);
+        MetricsLogger.Instance.LogEvent("ENTER", other.name, transform.parent.name, transform.position);
     }
 
     public void OnTriggerExit(Collider other)
@@ -22,7 +22,7 @@ public class ControladorColliders : MonoBehaviour
         {
             OnColliderExited?.Invoke();
         }
-        MetricsLogger.Instance.LogEvent("EXIT", other.name, "RING", transform.position);
+        MetricsLogger.Instance.LogEvent("EXIT", other.name, transform.parent.name, transform.position);
     }
 
 }

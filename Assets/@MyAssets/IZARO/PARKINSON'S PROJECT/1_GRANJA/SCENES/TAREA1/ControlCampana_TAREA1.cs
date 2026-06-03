@@ -34,7 +34,7 @@ public class ControlCampana_TAREA1 : MonoBehaviour
             {
                 taskStarted = true;
 
-                MetricsLogger.Instance.StartTask();
+                //MetricsLogger.Instance.StartTask();
                 /*
                 MetricEvent bellEvent = new MetricEvent
                 (

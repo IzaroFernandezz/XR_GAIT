@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 198670589}
   m_Layer: 0
   m_Name: TerceraPosFuente
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2622,11 +2622,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198670584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!4 &232284212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 58d87370d6f68914ea0ac2f289e624b4, type: 3}
@@ -3548,7 +3549,7 @@ GameObject:
   - component: {fileID: 356802345}
   m_Layer: 0
   m_Name: SegundaPosFuente
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3596,11 +3597,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356802340}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &366165169 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3357478484758313183, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
@@ -4111,7 +4113,7 @@ GameObject:
   - component: {fileID: 489764851}
   m_Layer: 0
   m_Name: Boton3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4204,11 +4206,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489764846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &491637135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,6 +4869,7 @@ MonoBehaviour:
   scenarioName: Park
   taskName: Task1
   trialNumber: 1
+  sessionID: 0
 --- !u!4 &652924877
 Transform:
   m_ObjectHideFlags: 0
@@ -8959,7 +8963,7 @@ GameObject:
   - component: {fileID: 1235060502}
   m_Layer: 0
   m_Name: Boton2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9007,11 +9011,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235060497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &1249127357
 GameObject:
   m_ObjectHideFlags: 0
@@ -12150,7 +12155,7 @@ GameObject:
   - component: {fileID: 1534376175}
   m_Layer: 0
   m_Name: Boton1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12198,11 +12203,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534376170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &1539843818 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2833025915467344894, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
@@ -12477,7 +12483,7 @@ GameObject:
   - component: {fileID: 1638912696}
   m_Layer: 0
   m_Name: Boton4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12525,11 +12531,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638912691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!4 &1649483425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5cfb38aa0b0a1e4292bd28f9f8eb83d, type: 3}
@@ -13383,7 +13390,7 @@ GameObject:
   - component: {fileID: 1847283229}
   m_Layer: 0
   m_Name: Posicioninicio
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13431,11 +13438,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847283224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &1874731958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
@@ -13548,7 +13556,7 @@ GameObject:
   - component: {fileID: 1895820620}
   m_Layer: 0
   m_Name: InicioFuente
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13596,11 +13604,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895820615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &1898030808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8883327119177525430, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
@@ -14165,7 +14174,7 @@ GameObject:
   - component: {fileID: 2011041627}
   m_Layer: 0
   m_Name: FinalFuente
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14213,11 +14222,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011041622}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 824c3fa39c9a3a2429292f5cc8152d29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6ec3972a8731e40b1219667e690ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoneName: Zone
 --- !u!1 &2012548167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7937480164976082309, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
@@ -14274,6 +14284,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
       propertyPath: m_Name
       value: PILOTO4_PT1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50b764795a5badb408ef5376d8f5e512, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

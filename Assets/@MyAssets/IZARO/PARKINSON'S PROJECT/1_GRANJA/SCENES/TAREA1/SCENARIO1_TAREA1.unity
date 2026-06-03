@@ -10607,6 +10607,7 @@ MonoBehaviour:
   scenarioName: Farm
   taskName: Task1
   trialNumber: 1
+  sessionID: 0
 --- !u!4 &1326818709
 Transform:
   m_ObjectHideFlags: 0

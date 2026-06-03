@@ -22,6 +22,7 @@ public class CUBITOS : MonoBehaviour
             cubitoInstanciado.transform.SetParent(cubitos[i].transform);
             cubitoInstanciado.transform.localPosition = Vector3.zero;
             cubitoInstanciado.transform.localRotation = Quaternion.identity;
+            cubitoInstanciado.name = cubitoInstanciado.transform.parent.name;
         }
 
         for (int i = 0; i < marcadoresRelevantes.Length; i++)
@@ -30,6 +31,8 @@ public class CUBITOS : MonoBehaviour
             cubitoInstanciado.transform.SetParent(marcadoresRelevantes[i].transform);
             cubitoInstanciado.transform.localPosition = Vector3.zero;
             cubitoInstanciado.transform.localRotation = Quaternion.identity;
+            cubitoInstanciado.name = cubitoInstanciado.transform.parent.name;
+
         }
     }
 

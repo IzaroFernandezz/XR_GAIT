@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Fin de Grado | IIS</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Cards grid */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Tech stack */
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+            margin-right: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎓 Nombre del Proyecto</h1>
+        <p>Proyecto Fin de Grado desarrollado en el Instituto de Investigación Sanitaria</p>
+        <span class="badge">📍 IIS • Curso 2024-2025</span>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#descripcion">Descripción</a></li>
+            <li><a href="#objetivos">Objetivos</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
+            <li><a href="#documentacion">Documentación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="descripcion">
+            <h2>📋 Descripción del Proyecto</h2>
+            <p>
+                Este proyecto ha sido desarrollado como Trabajo de Fin de Grado en colaboración con 
+                el Instituto de Investigación Sanitaria (IIS). El objetivo principal es 
+                [describe brevemente tu proyecto aquí].
+            </p>
+            <p>
+                El sistema permite [funcionalidad principal], facilitando [beneficio clave] 
+                para los profesionales del sector sanitario.
+            </p>
+        </section>
+
+        <section id="objetivos">
+            <h2>🎯 Objetivos</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Objetivo 1</h3>
+                    <p>Descripción del primer objetivo principal del proyecto.</p>
+                </div>
+                <div class="card">
+                    <h3>Objetivo 2</h3>
+                    <p>Descripción del segundo objetivo principal del proyecto.</p>
+                </div>
+                <div class="card">
+                    <h3>Objetivo 3</h3>
+                    <p>Descripción del tercer objetivo principal del proyecto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologias">
+            <h2>🛠️ Tecnologías Utilizadas</h2>
+            <p>El proyecto ha sido desarrollado utilizando las siguientes tecnologías:</p>
+            <div class="tech-list">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">HTML/CSS</span>
+                <span class="tech-item">SQL</span>
+                <!-- Añade o modifica según tus tecnologías -->
+            </div>
+        </section>
+
+        <section id="documentacion">
+            <h2>📚 Documentación</h2>
+            <p>
+                Accede a la documentación completa del proyecto, incluyendo la memoria del TFG,
+                guías de instalación y manual de usuario.
+            </p>
+            <a href="#" class="btn">📄 Ver Memoria</a>
+            <a href="#" class="btn btn-outline">💻 Ver Código</a>
+        </section>
+
+        <section id="contacto">
+            <h2>📧 Contacto</h2>
+            <p><strong>Autor:</strong> Tu Nombre</p>
+            <p><strong>Tutor:</strong> Nombre del Tutor</p>
+            <p><strong>Centro:</strong> Instituto de Investigación Sanitaria</p>
+            <p><strong>Universidad:</strong> Tu Universidad</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2025 Tu Nombre · Proyecto Fin de Grado · 
+            <a href="[github.com](https://github.com/tu-usuario/tu-repo)">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>

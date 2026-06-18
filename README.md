@@ -1,137 +1,142 @@
 # XR_GAIT
 
-## 1. What is XR_GAIT?
+Mixed reality prototype for gait-task execution and post-acquisition movement review in the context of Parkinson's disease research.
 
-XR_GAIT is a research-oriented project focused on the development of mixed reality (XR) environments for the assessment of gait and motor function in Parkinson’s disease. The system aims to provide ecologically valid, controlled, and interactive scenarios that allow the evaluation of locomotion under conditions that are difficult to reproduce in traditional clinical settings.
-
-By combining immersive technologies with data-driven analysis, XR_GAIT seeks to bridge the gap between laboratory-based assessments and real-world motor behaviour, contributing to more objective and context-aware evaluation methods.
+> Academic research prototype developed as part of a Biomedical Engineering Final Degree Project.
 
 ---
 
-## 2. Key Features
+## Overview
 
-- **Mixed Reality environments** designed for gait and motor assessment  
-- **Task-based interaction** (turning, obstacle avoidance, narrow spaces, dual-tasking)  
-- **Integration with motion capture systems (Vicon)** for high-precision kinematic data  
-- **Compatibility with Meta Quest 3 devices**  
-- **Support for real-time interaction and user feedback**  
-- **Data-driven analysis** of motor performance  
+**XR_GAIT** is a Unity-based mixed reality prototype designed to reproduce gait-related tasks inside a controlled laboratory environment.
 
----
+The project combines two complementary lines of work:
 
-## 3. System Architecture
+- retrospective analysis of clinical and STAT-ON™ ambulatory monitoring data;
+- development of mixed reality gait tasks compatible with motion capture recordings.
 
-The XR_GAIT system is structured into three main layers:
+This repository focuses on the **mixed reality prototype** and its technical workflow.
 
-### 3.1 Interaction Layer
-- Mixed reality scenarios developed in **Unity**
-- User interaction via **Meta Quest 3**
-- Task-based environments simulating real-world challenges
-
-### 3.2 Data Acquisition Layer
-- Motion capture using **Vicon system**
-- XR interaction data (position, timing, task performance)
-- Optional integration with external datasets (e.g., wearable sensors)
-
-### 3.3 Data Processing and Analysis
-- Extraction of gait-related features
-- Synchronisation between XR and motion capture data
-- Preliminary analysis of motor patterns and behaviour
+The prototype is not a clinical product, diagnostic tool or certified medical device.
 
 ---
 
-## 4. Components
+## Prototype structure
 
-- **Unity Application**
-  - Core XR environment
-  - Scenario design and interaction logic
+The application includes two mixed reality scenarios:
 
-- **XR Hardware**
-  - Meta Quest 3 headset
+### Farm scenario
 
-- **Motion Capture System**
-  - Vicon system for kinematic data acquisition
+A linear corridor environment designed to reproduce controlled walking conditions.
 
-- **External Data Sources (optional)**
-  - Wearable sensor datasets (e.g., STAT-ON)
+Main task elements:
+
+- corridor walking;
+- turning point;
+- chickens crossing the path;
+- trapdoors;
+- button interaction;
+- delayed environmental changes.
+
+### Park scenario
+
+A more open environment organised around a central fountain and several interaction areas.
+
+Main task elements:
+
+- route following;
+- fountain buttons;
+- object relocation;
+- bench, bin and fruit stand areas;
+- phone-guided instructions.
 
 ---
 
-## 5. Project Status
+## Main workflow
 
-⚠️ **Development stage: Experimental / Research prototype**
+```text
+Unity MR application
+        ↓
+Meta Quest 3 execution
+        ↓
+Vicon motion capture recording
+        ↓
+Vicon Nexus reconstruction
+        ↓
+Blender FBX conversion
+        ↓
+Unity playback
+        ↓
+CSV event output
+```
 
-- Mixed reality environments implemented and functional  
-- Initial integration with motion capture systems  
-- Preliminary testing conducted in healthy subjects  
-- No clinical validation performed yet  
+The reconstructed movement can be imported back into Unity and replayed inside the corresponding task scene. During playback, event colliders register relevant task points and generate CSV files containing:
 
-This project is part of an academic research initiative and is not intended for clinical use.
+- event names;
+- timestamps;
+- spatial positions;
+- estimated forward speed.
 
 ---
 
-## 6. Download and Installation
-Requirements
-Unity (recommended version to be specified).
-Meta Quest 3 headset.
-Meta Quest Link, Air Link, or an equivalent deployment workflow.
-Compatible PC for Unity development.
-Vicon motion capture system (optional, required only for motion capture integration).
-Git.
-Installation Steps
-Clone the repository:
-```bash
-   git clone https://github.com/BEGIBRAINLAB/XR_GAIT.git
-   ```
-Open the project in Unity.
-Install or verify the required Unity packages:
-XR Plugin Management.
-OpenXR Plugin.
-Meta XR / Oculus XR support, if required by the project configuration.
-Configure the XR build settings:
-Select Android as the target platform.
-Enable XR support.
-Configure the project for Meta Quest 3 deployment.
-Connect the Meta Quest 3 headset to the development computer.
-Build and deploy the application to the headset.
-Optional: configure Vicon integration if motion capture data are required.
+## Requirements
+
+The project was developed using:
+
+- Unity;
+- Meta Quest 3;
+- Meta XR / Oculus XR support;
+- Vicon Nexus;
+- Blender;
+- Python for later CSV processing.
+
+The exact Unity and package versions should be checked in the project settings and package files.
+
 ---
-## 7. Usage
-Launch the application on the Meta Quest 3 headset.
-Select the desired mixed-reality scenario from the main menu.
-Fol0low the instructions displayed in the environment.
-Perform the task-based activities, which may include:
-Walking through constrained spaces.
-Turning tasks.
-Obstacle avoidance.
-Dual-task interaction.
-Postural or reaching tasks.
-If data recording is enabled, task events and interaction data can be stored for later analysis.
-If the Vicon system is used, motion capture recording should be started and synchronised according to the experimental protocol.
+
+## Running the prototype
+
+To open and deploy the project:
+
+1. Clone or download the repository.
+2. Open the project in Unity.
+3. Check that the required XR packages are installed.
+4. Connect the Meta Quest 3 headset to the computer.
+5. Open **File > Build Settings**.
+6. Select **Android** as the target platform.
+7. Check that the required scenes are included.
+8. Press **Build And Run**.
+
+After deployment, the application can be launched directly from the Meta Quest 3 headset.
+
 ---
-## 8. Limitations
-The current version of XR_GAIT presents several limitations:
-The system has not yet been clinically validated in patients with Parkinson’s disease.
-Testing has been limited to preliminary feasibility trials.
-Motion capture integration is still under development.
-The number of implemented scenarios and tasks may change as the project evolves.
-Quantitative analysis pipelines are still exploratory.
-Results obtained with the current prototype should be interpreted as preliminary.
+
+## Current status
+
+The prototype currently includes:
+
+- two mixed reality scenarios;
+- seven task configurations;
+- scenario and task selection menus;
+- instruction panels with route guidance;
+- interaction logic for buttons, trapdoors, objects and phone-guided actions;
+- compatibility with a post-acquisition Vicon workflow;
+- CSV event-output generation from reconstructed movement playback.
+
+The system has been tested with healthy volunteers for preliminary technical and usability evaluation.
+
 ---
-## 9. Future Work
-Planned future developments include:
-Refinement of the mixed-reality scenarios.
-Improved synchronisation between Unity and Vicon motion capture data.
-Development of automated data extraction and analysis pipelines.
-Expansion of task-based environments for gait, turning, obstacle avoidance, and postural control.
-Usability testing with larger groups of healthy participants.
-Future clinical validation in patients with Parkinson’s disease, subject to ethical approval.
-Exploration of integration with wearable sensor data.
+
+## Limitations
+
+- The MR protocol has not been clinically validated in patients with Parkinson's disease.
+- Unity and Vicon were not synchronised in real time.
+- Dynamic virtual elements cannot be fully reproduced during post-acquisition analysis.
+- CSV outputs are event-based and do not replace full biomechanical gait analysis.
+- Confidential clinical data, participant recordings and large motion capture files are not included.
+
 ---
-## 10. Acknowledgements
-This project has been developed within the Neurodegenerative Diseases research environment at Biobizkaia Health Research Institute.
-The work is part of an academic research project in Biomedical Engineering focused on the application of mixed-reality technologies and quantitative movement analysis to the assessment of motor function in Parkinson’s disease.
----
-## 11. Licence
-The licence for this repository has not yet been specified.
-Please contact the project maintainers before using, modifying, or redistributing the contents of this repository.
+
+## Disclaimer
+
+This repository contains an academic research prototype. It is intended for documentation, development and research purposes only.

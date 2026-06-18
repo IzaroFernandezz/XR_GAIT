@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XR_GAIT — Mixed Reality Gait Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  :root {
+    --blue-950: #020f1e;
+    --blue-900: #042C53;
+    --blue-800: #0C447C;
+    --blue-700: #185FA5;
+    --blue-500: #378ADD;
+    --blue-300: #85B7EB;
+    --blue-100: #B5D4F4;
+    --blue-50:  #E6F1FB;
+    --off-white: #f4f7fb;
+    --text-main: #e8f0fa;
+    --text-muted: #7ea8d4;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Inter', sans-serif;
+  }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    font-family: var(--sans);
+    background: var(--blue-950);
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+ 
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--blue-950);
+    border-bottom: 1px solid rgba(55, 138, 221, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 56px;
+  }
+ 
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue-300);
+    letter-spacing: 0.12em;
+    text-decoration: none;
+  }
+ 
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+ 
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+ 
+  .nav-links a:hover { color: var(--blue-100); }
+ 
+  /* HERO */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+ 
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--blue-500);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--off-white);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .hero h1 span {
+    color: var(--blue-300);
+    font-weight: 600;
+  }
+ 
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+  }
+ 
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+ 
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue-700);
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+ 
+  .btn-primary:hover { background: var(--blue-500); }
+ 
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(55,138,221,0.4);
+    color: var(--blue-300);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+ 
+  .btn-ghost:hover { border-color: var(--blue-300); color: var(--off-white); }
+ 
+  .hero-meta {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+ 
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+ 
+  .meta-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue-500);
+  }
+ 
+  .meta-value {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+ 
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(55,138,221,0.12);
+    margin: 0;
+  }
+ 
+  /* SECTION */
+  section {
+    padding: 6rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+ 
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-500);
+    margin-bottom: 1rem;
+  }
+ 
+  section h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: var(--off-white);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+ 
+  section p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    max-width: 680px;
+  }
+ 
+  /* SCENARIOS */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    background: rgba(55,138,221,0.12);
+    border: 1px solid rgba(55,138,221,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2.5rem;
+  }
+ 
+  .scenario-card {
+    background: var(--blue-950);
+    padding: 2rem;
+  }
+ 
+  .scenario-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--blue-700);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+ 
+  .scenario-card h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--off-white);
+    margin-bottom: 0.75rem;
+  }
+ 
+  .scenario-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+ 
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+ 
+  .tag {
+    font-size: 11px;
+    font-family: var(--mono);
+    background: rgba(55,138,221,0.1);
+    color: var(--blue-300);
+    border: 1px solid rgba(55,138,221,0.2);
+    padding: 3px 9px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+ 
+  /* WORKFLOW */
+  .workflow {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .workflow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(55,138,221,0.1);
+  }
+ 
+  .workflow-step:last-child { border-bottom: 1px solid rgba(55,138,221,0.1); }
+ 
+  .step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--blue-700);
+    min-width: 28px;
+    padding-top: 3px;
+  }
+ 
+  .step-body h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--off-white);
+    margin-bottom: 2px;
+  }
+ 
+  .step-body p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+ 
+  /* FEATURES */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+ 
+  .feature-item {
+    border: 1px solid rgba(55,138,221,0.14);
+    border-radius: 8px;
+    padding: 1.25rem;
+    background: rgba(12,68,124,0.08);
+  }
+ 
+  .feature-item h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue-100);
+    margin-bottom: 0.4rem;
+  }
+ 
+  .feature-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+ 
+  /* STACK */
+  .stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 1.5rem;
+  }
+ 
+  .stack-pill {
+    background: rgba(12,68,124,0.25);
+    border: 1px solid rgba(55,138,221,0.25);
+    color: var(--blue-100);
+    font-size: 13px;
+    font-family: var(--mono);
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+ 
+  /* DISCLAIMER */
+  .disclaimer-box {
+    margin-top: 2rem;
+    border: 1px solid rgba(55,138,221,0.2);
+    border-left: 3px solid var(--blue-700);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    background: rgba(12,68,124,0.1);
+  }
+ 
+  .disclaimer-box p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+ 
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(55,138,221,0.12);
+    padding: 2.5rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+ 
+  footer p {
+    font-size: 12px;
+    color: var(--blue-700);
+    font-family: var(--mono);
+  }
+ 
+  footer a {
+    color: var(--blue-500);
+    text-decoration: none;
+  }
+ 
+  footer a:hover { color: var(--blue-300); }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+    .hero, section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+ 
+<nav>
+  <a href="#" class="nav-logo">XR_GAIT</a>
+  <ul class="nav-links">
+    <li><a href="#scenarios">Scenarios</a></li>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#stack">Stack</a></li>
+  </ul>
+</nav>
+ 
+<div class="hero">
+  <p class="hero-eyebrow">Biomedical Engineering &mdash; Final Degree Project</p>
+  <h1>Mixed reality<br>for <span>gait research</span><br>in Parkinson's</h1>
+  <p class="hero-sub">
+    XR_GAIT is a Unity-based mixed reality prototype that reproduces controlled gait tasks
+    inside a laboratory environment, combined with post-acquisition movement review
+    via Vicon motion capture.
+  </p>
+  <div class="hero-actions">
+    <a href="https://github.com/IzaroFernandezz/XR_GAIT" target="_blank" class="btn-primary">
+      View on GitHub &rarr;
+    </a>
+    <a href="#workflow" class="btn-ghost">See the workflow</a>
+  </div>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Platform</span>
+      <span class="meta-value">Meta Quest 3</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Engine</span>
+      <span class="meta-value">Unity</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Scenarios</span>
+      <span class="meta-value">2 (Farm &amp; Park)</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Task configurations</span>
+      <span class="meta-value">7</span>
+    </div>
+  </div>
+</div>
+ 
+<hr class="section-divider">
+ 
+<section id="scenarios">
+  <p class="section-label">Mixed reality tasks</p>
+  <h2>Two controlled environments</h2>
+  <p>
+    Each scenario is designed to elicit specific gait-related behaviours while remaining
+    compatible with simultaneous Vicon motion capture recording.
+  </p>
+ 
+  <div class="scenario-grid">
+    <div class="scenario-card">
+      <p class="scenario-num">01 &mdash; Farm</p>
+      <h3>Farm scenario</h3>
+      <p>
+        A linear corridor designed to reproduce controlled walking conditions
+        with timed obstacles and interaction points.
+      </p>
+      <div class="tag-list">
+        <span class="tag">corridor walking</span>
+        <span class="tag">turning point</span>
+        <span class="tag">chickens</span>
+        <span class="tag">trapdoors</span>
+        <span class="tag">button interaction</span>
+        <span class="tag">delayed changes</span>
+      </div>
+    </div>
+    <div class="scenario-card">
+      <p class="scenario-num">02 &mdash; Park</p>
+      <h3>Park scenario</h3>
+      <p>
+        An open environment with a central fountain and several interaction
+        areas, designed for route-following and object manipulation tasks.
+      </p>
+      <div class="tag-list">
+        <span class="tag">route following</span>
+        <span class="tag">fountain buttons</span>
+        <span class="tag">object relocation</span>
+        <span class="tag">bench &amp; bin</span>
+        <span class="tag">fruit stand</span>
+        <span class="tag">phone instructions</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<hr class="section-divider">
+ 
+<section id="workflow">
+  <p class="section-label">Technical pipeline</p>
+  <h2>From capture to analysis</h2>
+  <p>
+    The prototype integrates real-time execution in the headset with a post-acquisition
+    pipeline that reconstructs movement and generates structured event data.
+  </p>
+ 
+  <div class="workflow">
+    <div class="workflow-step">
+      <span class="step-num">01</span>
+      <div class="step-body">
+        <h4>Unity MR application</h4>
+        <p>Task scenarios deployed to Meta Quest 3 via Android build.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">02</span>
+      <div class="step-body">
+        <h4>Meta Quest 3 execution</h4>
+        <p>Participant performs the task while wearing the headset in the lab.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">03</span>
+      <div class="step-body">
+        <h4>Vicon motion capture recording</h4>
+        <p>Simultaneous full-body marker recording during task execution.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">04</span>
+      <div class="step-body">
+        <h4>Vicon Nexus reconstruction</h4>
+        <p>Marker trajectories are labelled and reconstructed in Nexus.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">05</span>
+      <div class="step-body">
+        <h4>Blender FBX conversion</h4>
+        <p>Reconstructed skeleton exported as FBX for Unity import.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">06</span>
+      <div class="step-body">
+        <h4>Unity playback</h4>
+        <p>FBX animation replayed inside the original task scene.</p>
+      </div>
+    </div>
+    <div class="workflow-step">
+      <span class="step-num">07</span>
+      <div class="step-body">
+        <h4>CSV event output</h4>
+        <p>Event colliders register task points and output event names, timestamps, positions and estimated forward speed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<hr class="section-divider">
+ 
+<section id="features">
+  <p class="section-label">Current status</p>
+  <h2>What the prototype includes</h2>
+  <p>Tested with healthy volunteers for preliminary technical and usability evaluation.</p>
+ 
+  <div class="features-grid">
+    <div class="feature-item">
+      <h4>2 MR scenarios</h4>
+      <p>Farm and Park, each with distinct task structures and interaction types.</p>
+    </div>
+    <div class="feature-item">
+      <h4>7 task configurations</h4>
+      <p>Selectable from in-app menus at the start of each session.</p>
+    </div>
+    <div class="feature-item">
+      <h4>Instruction panels</h4>
+      <p>Route guidance and task instructions shown in-headset.</p>
+    </div>
+    <div class="feature-item">
+      <h4>Interaction logic</h4>
+      <p>Buttons, trapdoors, object relocation and phone-guided actions.</p>
+    </div>
+    <div class="feature-item">
+      <h4>Vicon compatibility</h4>
+      <p>Full post-acquisition pipeline from capture to Unity playback.</p>
+    </div>
+    <div class="feature-item">
+      <h4>CSV event output</h4>
+      <p>Structured event data for downstream Python analysis.</p>
+    </div>
+  </div>
+</section>
+ 
+<hr class="section-divider">
+ 
+<section id="stack">
+  <p class="section-label">Requirements</p>
+  <h2>Tools and technologies</h2>
+  <p>
+    The exact Unity and package versions should be verified in the project settings and package manifest.
+  </p>
+ 
+  <div class="stack-list">
+    <span class="stack-pill">Unity</span>
+    <span class="stack-pill">Meta Quest 3</span>
+    <span class="stack-pill">Meta XR SDK</span>
+    <span class="stack-pill">Oculus XR Plugin</span>
+    <span class="stack-pill">Vicon Nexus</span>
+    <span class="stack-pill">Blender</span>
+    <span class="stack-pill">Python</span>
+    <span class="stack-pill">Android Build</span>
+  </div>
+ 
+  <div class="disclaimer-box" style="margin-top: 3rem;">
+    <p>
+      This repository contains an academic research prototype. It is intended for documentation,
+      development and research purposes only. The prototype is not a clinical product,
+      diagnostic tool or certified medical device. The MR protocol has not been clinically
+      validated in patients with Parkinson's disease.
+    </p>
+  </div>
+</section>
+ 
+<footer>
+  <p>&copy; 2025 Izaro Fern&aacute;ndez &mdash; Biomedical Engineering Final Degree Project</p>
+  <p><a href="https://github.com/IzaroFernandezz/XR_GAIT" target="_blank">github.com/IzaroFernandezz/XR_GAIT</a></p>
+</footer>
+ 
+</body>
+</html>
